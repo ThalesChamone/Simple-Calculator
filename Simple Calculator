@@ -1,0 +1,71 @@
+//Calculadora:
+//Escreva um algoritmo para ler 02 valores inteiros e uma das seguintes
+//operações a serem executadas:
+//1. Adição
+//2. Subtração
+//3. Divisão
+//4. Multiplicação
+//Calcular e escrever o resultado dessa operação sobre os dois valores lidos.
+//Observação: Considere que só serão lidos os valores 1, 2, 3 ou 4.
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <conio.h>
+#include <ctype.h>
+#include <stdbool.h>
+
+float op = 0, res;
+int n1, n2;
+
+
+int main() {
+
+	printf("Escolha umas das operacoes: [1] Adicao [2] Subtracao [3] Divisao [4] Multiplicacao: ");
+	scanf_s("%f", &op);
+
+	while (op != 1 && op != 2 && op !=3 && op != 4)
+
+	{
+		printf("\nOperador invalido");
+		printf("\nEscolha umas das operacoes: [1] Adicao [2] Subtracao [3] Divisao [4] Multiplicacao: ");
+		scanf_s("%f", &op);
+	}
+
+	
+
+	printf("\nEscolha primeiro valor: ");
+	scanf_s("%i", &n1);
+	printf("\nEscolha segundo valor: ");
+	scanf_s("%i", &n2);
+
+	while (op == 3 && n2 == 0)
+	{
+		printf("\nNao se pode dividir por zero, escolha outra opcao: \n");
+		printf("\nEscolha umas das operacoes: [1] Adicao [2] Subtracao [3] Divisao [4] Multiplicacao: ");
+		scanf_s("%f", &op);
+
+	}
+
+
+	if (op == 1)
+	{
+		res = n1 + n2;
+	}
+	if (op == 2)
+	{
+		res = n1 - n2;
+	}
+	if (op == 3)
+	{
+		res = n1 / n2;
+	}
+	if (op == 4)
+	{
+		res = n1 * n2;
+	}
+
+	printf("\nResultado da operacao e: \n%.0f", res);
+
+}
